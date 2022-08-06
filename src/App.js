@@ -9,7 +9,6 @@ function App() {
       <header>
         <NavbarComponent />
       </header>
-      <HomePage />
       <Routes>
         <Route path="/" element={<HomePage />} />
       </Routes>
