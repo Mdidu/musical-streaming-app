@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const SvgOpenAnotherTab = (props) => (
+export const SvgOpenAnotherTab = (props) => (
   <svg height={16} width={16} {...props}>
     <g fill="currentColor" fillRule="evenodd">
       <path d="M1 2.75A.75.75 0 0 1 1.75 2H7v1.5H2.5v11h10.219V9h1.5v6.25a.75.75 0 0 1-.75.75H1.75a.75.75 0 0 1-.75-.75V2.75z" />
@@ -8,5 +8,3 @@ const SvgOpenAnotherTab = (props) => (
     </g>
   </svg>
 );
-
-export default SvgOpenAnotherTab;

@@ -4,7 +4,7 @@ import styles from "./subscribe-button.module.css";
 const SUBSCRIBE_TXT = "S'abonner";
 const SUBSCRIBER_TXT = "Abonné";
 
-function SubscribeButtonComponent() {
+export function SubscribeButtonComponent() {
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   const txt = isSubscribed ? SUBSCRIBER_TXT : SUBSCRIBE_TXT;
@@ -19,5 +19,3 @@ function SubscribeButtonComponent() {
     </button>
   );
 }
-
-export default SubscribeButtonComponent;

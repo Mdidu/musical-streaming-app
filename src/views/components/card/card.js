@@ -3,7 +3,7 @@ import SvgPause from "../../icons/Pause";
 import SvgPlay from "../../icons/Play";
 import styles from "./card.module.css";
 
-function CardComponent(props) {
+export function CardComponent(props) {
   const [isListen, setIsListen] = useState(false);
 
   const svgComponent = isListen ? <SvgPause /> : <SvgPlay />;
@@ -30,5 +30,3 @@ function CardComponent(props) {
     </div>
   );
 }
-
-export default CardComponent;

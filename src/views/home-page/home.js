@@ -1,6 +1,6 @@
 import "./home.css";
 
-function HomePage() {
+export function HomePage() {
   return (
     <div>
       {/* <CardComponent
@@ -12,5 +12,3 @@ function HomePage() {
     </div>
   );
 }
-
-export default HomePage;

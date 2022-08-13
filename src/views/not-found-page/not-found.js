@@ -1,7 +1,5 @@
 import "./not-found.css";
 
-function NotFoundPage() {
+export function NotFoundPage() {
   return <div></div>;
 }
-
-export default NotFoundPage;

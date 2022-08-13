@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const SvgFloatingPlayer = (props) => (
+export const SvgFloatingPlayer = (props) => (
   <svg width={16} height={16} xmlns="http://www.w3.org/2000/svg" {...props}>
     <g fill="currentColor" fillRule="evenodd">
       <path
@@ -11,5 +11,3 @@ const SvgFloatingPlayer = (props) => (
     </g>
   </svg>
 );
-
-export default SvgFloatingPlayer;
