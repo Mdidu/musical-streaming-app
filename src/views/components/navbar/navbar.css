@@ -22,13 +22,13 @@ a {
   text-decoration: none;
   font-size: 20px;
 }
-.navbar-item {
+.navbar_item {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 20px;
   position: relative;
 }
-.navbar-item::before {
+.navbar_item::before {
   content: '';
   width: 0;
   height: 5px;
@@ -38,7 +38,7 @@ a {
   left: 0;
   transition: all 0.5s;
 }
-.navbar-item::after {
+.navbar_item::after {
   content: '';
   width: 0;
   height: 5px;
@@ -48,11 +48,11 @@ a {
   right: 0;
   transition: all 0.5s;
 }
-.navbar-item:hover::before{
+.navbar_item:hover::before{
   width: 50%;
   transform: translateX(100%);
 }
-.navbar-item:hover::after{
+.navbar_item:hover::after{
   width: 50%;
   transform: translateX(-100%);
 }
@@ -62,7 +62,7 @@ a {
     justify-content: space-between;
     align-content: center;
   }
-  #navbar-home {
+  #navbar_home {
     grid-column: 1;
   }
   /* #navbar-read-playlist {

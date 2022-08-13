@@ -1,12 +1,12 @@
 import { useState } from "react";
-import logoPlay from "../../../assets/bouton-jouer.png";
-import logoPause from "../../../assets/pause.png";
+import SvgPause from "../../icons/Pause";
+import SvgPlay from "../../icons/Play";
 import styles from "./card.module.css";
 
 function CardComponent(props) {
   const [isListen, setIsListen] = useState(false);
 
-  const logo = isListen ? logoPause : logoPlay;
+  const svgComponent = isListen ? <SvgPause /> : <SvgPlay />;
 
   return (
     <div className={styles.card}>
@@ -22,7 +22,7 @@ function CardComponent(props) {
           className={styles.card_player}
           onClick={() => setIsListen(!isListen)}
         >
-          <img src={logo} width="20" height="20" alt="player icon" />
+          {svgComponent}
         </span>
       </div>
       <p className={styles.card_main_text}>{props.title}</p>
