@@ -1,0 +1,12 @@
+#sound_reader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+#sound_reader_btns {
+  width: 120px;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-around;
+}

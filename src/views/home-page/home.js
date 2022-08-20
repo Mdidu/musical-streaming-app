@@ -1,3 +1,4 @@
+import { SoundReaderComponent } from "../components/sound-reader/sound-reader";
 import "./home.css";
 
 export function HomePage() {
@@ -9,6 +10,7 @@ export function HomePage() {
         title="Nature"
         description="artiste"
       /> */}
+      <SoundReaderComponent />
     </div>
   );
 }
