@@ -1,12 +1,14 @@
 import { useState } from "react";
-import SvgPause from "../../icons/Pause";
-import SvgPlay from "../../icons/Play";
+import { SvgPause } from "../../icons/Pause";
+import { SvgPlay } from "../../icons/Play";
 import styles from "./card.module.css";
 
-export function CardComponent(props) {
+export const CardComponent = (props) => {
   const [isListen, setIsListen] = useState(false);
 
-  const svgComponent = isListen ? <SvgPause /> : <SvgPlay />;
+  const svgComponent = isListen ? <SvgPause data-testid="card-player-pause" /> : <SvgPlay />;
+
+  const onClickReader = () => setIsListen(!isListen);
 
   return (
     <div className={styles.card}>
@@ -20,7 +22,8 @@ export function CardComponent(props) {
         />
         <span
           className={styles.card_player}
-          onClick={() => setIsListen(!isListen)}
+          data-testid="svgComponent"
+          onClick={onClickReader}
         >
           {svgComponent}
         </span>
@@ -29,4 +32,4 @@ export function CardComponent(props) {
       <p className={styles.card_sub_text}>{props.description}</p>
     </div>
   );
-}
+};

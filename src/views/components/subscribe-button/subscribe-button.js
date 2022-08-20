@@ -10,6 +10,7 @@ export function SubscribeButtonComponent() {
   const txt = isSubscribed ? SUBSCRIBER_TXT : SUBSCRIBE_TXT;
   return (
     <button
+      data-testid="subscribe-btn"
       className={styles.subscribe_btn}
       onClick={() => {
         setIsSubscribed(!isSubscribed);
