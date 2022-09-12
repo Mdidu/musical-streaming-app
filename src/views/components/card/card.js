@@ -3,7 +3,7 @@ import { SvgPause } from "../../icons/Pause";
 import { SvgPlay } from "../../icons/Play";
 import styles from "./card.module.css";
 
-export const CardComponent = (props) => {
+export function CardComponent(props) {
   const [isListen, setIsListen] = useState(false);
 
   const listenComponent = isListen ? (
@@ -36,4 +36,4 @@ export const CardComponent = (props) => {
       <p className={styles.card_sub_text}>{props.description}</p>
     </div>
   );
-};
+}

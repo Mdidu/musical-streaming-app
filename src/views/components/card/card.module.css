@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 250px;
   min-height: 250px;
+  margin: 10px;
   background: #FFFAFA;
   align-items: baseline;
 }

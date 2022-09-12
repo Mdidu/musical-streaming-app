@@ -1,0 +1,12 @@
+.recommandation_category {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+}
+.recommandation_category a {
+  color: black;
+}
+.recommandation_card_list {
+  display: flex;
+  align-items: center;
+}
