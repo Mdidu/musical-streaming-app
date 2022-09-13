@@ -1,10 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { DEFINE_HOME_PATH, DEFINE_RECOMMENDATION_PATH } from "./utilities/constantes-path";
+import {
+  DEFINE_HOME_PATH,
+  DEFINE_RECOMMENDATION_PATH,
+} from "./utilities/constantes-path";
 import { NavbarComponent } from "./views/components/navbar/navbar";
 import { SoundReaderComponent } from "./views/components/sound-reader/sound-reader";
-import { HomePage } from "./views/home-page/home";
-import RecommendationPage from "./views/recommendation-page/recommendation-page";
+import { HomePage } from "./views/pages/home-page/home";
+import RecommendationPage from "./views/pages/recommendation-page/recommendation-page";
 
 function App() {
   return (

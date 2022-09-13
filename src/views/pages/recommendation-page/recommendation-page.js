@@ -5,13 +5,13 @@ import {
   loadDailyRecommendations,
   loadPopularRelease,
   selectedRecommendationType,
-} from "../../stores/recommendation/recommendation.action";
-import { selectSelectedRecommendation } from "../../stores/recommendation/recommendation.selector";
+} from "../../../stores/recommendation/recommendation.action";
+import { selectSelectedRecommendation } from "../../../stores/recommendation/recommendation.selector";
 import {
   TITLE_DAILY_RECOMMENDATION,
   TITLE_POPULAR_RELEASE,
-} from "../../utilities/constantes-ui-text";
-import { CardComponent } from "../components/card/card";
+} from "../../../utilities/constantes-ui-text";
+import { CardComponent } from "../../components/card/card";
 import styles from "./recommendation-page.module.css";
 
 function RecommendationPage() {
