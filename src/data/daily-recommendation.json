@@ -6,7 +6,8 @@
     "title": "Thriller",
     "descriptionImage": "Michael Jackson",
     "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    "musicPath": ""
+    "musicPath": "",
+    "type": "Album"
   },
   {
     "key": 1,
@@ -15,7 +16,8 @@
     "title": "La Marseillaise",
     "descriptionImage": "France - La Marseillaise",
     "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    "musicPath": ""
+    "musicPath": "",
+    "type": "Album"
   },
   {
     "key": 2,
@@ -24,7 +26,8 @@
     "title": "Allumer le feu",
     "descriptionImage": "Jonhy Hallyday",
     "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    "musicPath": ""
+    "musicPath": "",
+    "type": "Album"
   },
   {
     "key": 3,
@@ -33,7 +36,8 @@
     "title": "Gangnam Style",
     "descriptionImage": "Psy",
     "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    "musicPath": ""
+    "musicPath": "",
+    "type": "Album"
   },
   {
     "key": 4,
@@ -42,7 +46,8 @@
     "title": "Jefe",
     "descriptionImage": "Ninho",
     "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    "musicPath": ""
+    "musicPath": "",
+    "type": "Album"
   },
   {
     "key": 5,
@@ -51,6 +56,7 @@
     "title": "T.N.T",
     "descriptionImage": "AC/DC",
     "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    "musicPath": ""
+    "musicPath": "",
+    "type": "Album"
   }
 ]

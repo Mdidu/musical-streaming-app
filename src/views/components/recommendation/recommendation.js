@@ -5,13 +5,7 @@ import styles from "./recommendation.module.css";
 
 export function RecommendationComponent(props) {
   const cardList = props.titleList.map((title) => (
-    <CardComponent
-      key={title.key}
-      imagePath={title.imagePath}
-      descriptionImage={title.descriptionImage}
-      title={title.title}
-      description={title.description}
-    />
+    <CardComponent key={title.key} cardValue={title} />
   ));
   return (
     <section>

@@ -7,6 +7,9 @@
   background: #FFFAFA;
   align-items: baseline;
 }
+.card a {
+  color: black;
+}
 .card .card_img_svg {
   display: grid;
   align-items: end;
@@ -14,7 +17,7 @@
   grid-template-columns: 1fr;
   margin: 20px;
 }
-.card_img {
+.card_img_svg a, .card_img {
  grid-row-start: 1;
  grid-column-start: 1;
   border-radius: 50%;

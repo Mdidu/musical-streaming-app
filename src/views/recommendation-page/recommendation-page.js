@@ -41,13 +41,7 @@ function RecommendationPage() {
   listRecommendation = useSelector(selectSelectedRecommendation) ?? [];
 
   const recommendations = listRecommendation.map((recommendation) => (
-    <CardComponent
-      key={recommendation.key}
-      imagePath={recommendation.imagePath}
-      descriptionImage={recommendation.descriptionImage}
-      title={recommendation.title}
-      description={recommendation.description}
-    />
+    <CardComponent key={recommendation.key} cardValue={recommendation} />
   ));
   return (
     <div className={styles.recommendation_page}>
