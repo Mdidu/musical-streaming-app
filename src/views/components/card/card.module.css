@@ -7,7 +7,7 @@
   background: #FFFAFA;
   align-items: baseline;
 }
-.card div {
+.card .card_img_svg {
   display: grid;
   align-items: end;
   justify-items: end;
@@ -15,7 +15,6 @@
   margin: 20px;
 }
 .card_img {
-  
  grid-row-start: 1;
  grid-column-start: 1;
   border-radius: 50%;
@@ -23,7 +22,6 @@
 .card_player {
   display: none;
 }
-  
 .card:hover .card_player {
  grid-row-start: 1;
  grid-column-start: 1;

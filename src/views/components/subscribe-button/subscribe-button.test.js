@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import { TEST_SUBSCRIBE_BUTTON } from "../../../utilities/constantes-testid";
 import { SubscribeButtonComponent } from "./subscribe-button";
 
 describe("SubscribeButtonComponent", () => {
@@ -11,7 +12,7 @@ describe("SubscribeButtonComponent", () => {
   it("test click subscribe button", () => {
     render(<SubscribeButtonComponent />);
 
-    fireEvent.click(screen.getByTestId("subscribe-btn"));
+    fireEvent.click(screen.getByTestId(TEST_SUBSCRIBE_BUTTON));
     expect(screen.getByText("Abonné")).toBeTruthy();
   });
 });

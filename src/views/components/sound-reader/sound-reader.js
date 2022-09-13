@@ -1,4 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import {
+  TEST_PLAYER_MUTED,
+  TEST_PLAYER_NEXT,
+  TEST_PLAYER_PAUSE,
+  TEST_PLAYER_PLAY,
+  TEST_PLAYER_PREVIOUS,
+  TEST_PLAYER_RANDOM_PLAYBACK,
+  TEST_PLAYER_READER,
+  TEST_PLAYER_REPEAT,
+  TEST_PLAYER_VOLUME,
+  TEST_VOLUME,
+} from "../../../utilities/constantes-testid";
 import { SvgMuted } from "../../icons/Muted";
 import { SvgNext } from "../../icons/Next";
 import { SvgPause } from "../../icons/Pause";
@@ -19,7 +31,7 @@ export function SoundReaderComponent() {
     currentTime: 0,
     duration: 0,
   });
-  
+
   const audioRef = useRef();
 
   useEffect(() => {
@@ -89,41 +101,44 @@ export function SoundReaderComponent() {
 
   /** CONDITIONAL COMPONENT DISPLAY ACCORDING TO STATE */
   const listenComponent = isListen ? (
-    <SvgPause data-testid="player-pause" />
+    <SvgPause data-testid={TEST_PLAYER_PAUSE} />
   ) : (
-    <SvgPlay data-testid="player-play" />
+    <SvgPlay data-testid={TEST_PLAYER_PLAY} />
   );
 
   const volumeComponent = isMuted ? (
-    <SvgMuted data-testid="player-muted" onClick={onClickMuted} />
+    <SvgMuted data-testid={TEST_PLAYER_MUTED} onClick={onClickMuted} />
   ) : (
-    <SvgVolume data-testid="player-volume" onClick={onClickMuted} />
+    <SvgVolume data-testid={TEST_PLAYER_VOLUME} onClick={onClickMuted} />
   );
 
   return (
     <div id={styles.sound_reader}>
       <div id={styles.sound_reader_btns}>
-        <span data-testid="random-playback" onClick={onClickRandomPlayback}>
+        <span
+          data-testid={TEST_PLAYER_RANDOM_PLAYBACK}
+          onClick={onClickRandomPlayback}
+        >
           <SvgRandomPlayback />
         </span>
-        <span data-testid="previous" onClick={onClickPrevious}>
+        <span data-testid={TEST_PLAYER_PREVIOUS} onClick={onClickPrevious}>
           <SvgPrevious />
         </span>
-        <span data-testid="reader" onClick={onClickReader}>
+        <span data-testid={TEST_PLAYER_READER} onClick={onClickReader}>
           {listenComponent}
         </span>
-        <span data-testid="next" onClick={onClickNext}>
+        <span data-testid={TEST_PLAYER_NEXT} onClick={onClickNext}>
           <SvgNext />
         </span>
-        <span data-testid="repeat" onClick={onClickRepeat}>
-          <SvgRepeat className={isLoop ? styles.sound_reader_active : ''} />
+        <span data-testid={TEST_PLAYER_REPEAT} onClick={onClickRepeat}>
+          <SvgRepeat className={isLoop ? styles.sound_reader_active : ""} />
         </span>
         <span className={styles.sound_reader_volume}>
           {volumeComponent}
           <span className={styles.sound_reader_volume_slider}>
             <input
               className={styles.volume}
-              data-testid="volume"
+              data-testid={TEST_VOLUME}
               type="range"
               min={0}
               max={100}

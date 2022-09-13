@@ -6,11 +6,13 @@ import {
 import {
   loadDailyRecommendations,
   loadPopularRelease,
+  selectedRecommendationType,
 } from "./recommendation.action";
 
 const initialState = {
   dailyRecommendations: null,
   popularRelease: null,
+  selectedRecommendationType: null,
 };
 
 export const recommendationReducer = createReducer(initialState, (builder) => {
@@ -23,6 +25,10 @@ export const recommendationReducer = createReducer(initialState, (builder) => {
     .addCase(loadPopularRelease, (state) => {
       const popularRelease = fetchAllPopularRelease();
       state.popularRelease = popularRelease;
+      return state;
+    })
+    .addCase(selectedRecommendationType, (state, action) => {
+      state.selectedRecommendationType = action.payload.typeRecommendation;
       return state;
     });
 });

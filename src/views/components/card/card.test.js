@@ -1,4 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import {
+  TEST_CARD_PLAYER_PAUSE,
+  TEST_SVG_COMPONENT,
+} from "../../../utilities/constantes-testid";
 import { CardComponent } from "./card";
 
 describe("CardComponent", () => {
@@ -23,8 +27,8 @@ describe("CardComponent", () => {
       />
     );
 
-    fireEvent.click(screen.getByTestId("svgComponent"));
+    fireEvent.click(screen.getByTestId(TEST_SVG_COMPONENT));
 
-    expect(screen.getByTestId("card-player-pause")).toBeInTheDocument();
+    expect(screen.getByTestId(TEST_CARD_PLAYER_PAUSE)).toBeInTheDocument();
   });
 });

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SEE_ALL } from "../../../utilities/constantes-ui-text";
 import { CardComponent } from "../card/card";
 import styles from "./recommendation.module.css";
 
@@ -18,7 +19,7 @@ export function RecommendationComponent(props) {
         <h2>
           <Link to={props.linkPath}>{props.title}</Link>
         </h2>
-        <Link to={props.linkPath}>Voir tout</Link>
+        <Link to={props.linkPath}>{SEE_ALL}</Link>
       </span>
       <div className={styles.recommandation_card_list}>{cardList}</div>
     </section>

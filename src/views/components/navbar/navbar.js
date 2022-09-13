@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { HOME_PAGE_PATH } from "../../../utilities/constantes-path";
 import styles from "./navbar.css";
 
 export function NavbarComponent() {
@@ -6,7 +7,7 @@ export function NavbarComponent() {
     <nav>
       <ul>
         <li id="navbar-home">
-          <Link to="/" className={styles.navbar_item}>
+          <Link to={HOME_PAGE_PATH} className={styles.navbar_item}>
             Home
           </Link>
         </li>

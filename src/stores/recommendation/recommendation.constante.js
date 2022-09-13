@@ -3,3 +3,4 @@ const BASE_RECOMMENDATION_ACTION = "recommendation";
 /* NAME ACTIONS - PUBLIC CONSTANTES */
 export const LOAD_DAILY_RECOMMENDATION = `${BASE_RECOMMENDATION_ACTION}/loadDailyRecommendation`;
 export const LOAD_POPULAR_RELEASE = `${BASE_RECOMMENDATION_ACTION}/loadPopularRelease`;
+export const SELECTED_RECOMMENDATION_TYPE = `${BASE_RECOMMENDATION_ACTION}/selectedRecommendationType`;

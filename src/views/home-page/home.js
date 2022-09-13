@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector, useStore } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   loadDailyRecommendations,
   loadPopularRelease,
@@ -8,17 +8,18 @@ import {
   selectDailyRecommendations,
   selectPopularRelease,
 } from "../../stores/recommendation/recommendation.selector";
+import { DAILY_RECOMMENDATION_PATH, POPULAR_RELEASE_PATH } from "../../utilities/constantes-path";
+import { TITLE_DAILY_RECOMMENDATION, TITLE_POPULAR_RELEASE } from "../../utilities/constantes-ui-text";
 import RecommendationComponent from "../components/recommendation/recommendation";
 import "./home.css";
 
 export function HomePage() {
-  const store = useStore();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadPopularRelease());
     dispatch(loadDailyRecommendations());
-  }, [store, dispatch]);
+  }, [dispatch]);
 
   const listePopularRelease = useSelector(selectPopularRelease) ?? [];
   const listRecommendation = useSelector(selectDailyRecommendations) ?? [];
@@ -26,14 +27,14 @@ export function HomePage() {
   return (
     <div>
       <RecommendationComponent
-        title="Dernières sorties populaires !"
+        title={TITLE_POPULAR_RELEASE}
         titleList={listePopularRelease}
-        linkPath="/popular-release"
+        linkPath={POPULAR_RELEASE_PATH}
       />
       <RecommendationComponent
-        title="A ne pas manquer aujourd'hui !"
+        title={TITLE_DAILY_RECOMMENDATION}
         titleList={listRecommendation}
-        linkPath="/daily-recommendation"
+        linkPath={DAILY_RECOMMENDATION_PATH}
       />
     </div>
   );
