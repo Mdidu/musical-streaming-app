@@ -8,11 +8,3 @@ export function fetchAllDailyRecommendations() {
 export function fetchAllPopularRelease() {
   return popularReleaseList;
 }
-
-
-/* 
-  Voir tout -> Amène à un écran où l'on voit toutes les cartes de la liste
-  Cliquer sur une carte amène soit :
-  -> Ecran de la musique
-  -> Ecran de l'album
-*/
