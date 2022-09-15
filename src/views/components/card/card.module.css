@@ -4,11 +4,11 @@
   width: 250px;
   min-height: 250px;
   margin: 10px;
-  background: #FFFAFA;
+  background: gray;
   align-items: baseline;
 }
 .card a {
-  color: black;
+  color: #FFFFFF;
 }
 .card .card_img_svg {
   display: grid;

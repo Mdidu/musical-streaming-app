@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export const SvgPause = (props) => (
   <svg height={16} width={16} {...props}>
     <path

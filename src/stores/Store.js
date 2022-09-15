@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { albumReducer } from "./album/album.reducer";
 import { recommendationReducer } from "./recommendation/recommendation.reducer";
 
 // le state et le reducer seront déplacé dans un autre fichier plus tard
@@ -18,6 +19,7 @@ function playlistReducer(state = initialState, action) {
 export const store = configureStore({
   reducer: {
     recommendation: recommendationReducer,
+    album: albumReducer,
     playlist: playlistReducer,
   },
 });

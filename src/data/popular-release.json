@@ -1,7 +1,7 @@
 [
   {
-    "key": 0,
-    "artiste": "",
+    "key": 3,
+    "artist": "",
     "description": "Psy",
     "title": "Gangnam Style",
     "descriptionImage": "Psy",
@@ -10,8 +10,8 @@
     "type": "Album"
   },
   {
-    "key": 1,
-    "artiste": "",
+    "key": 4,
+    "artist": "",
     "description": "Ninho",
     "title": "Jefe",
     "descriptionImage": "Ninho",
@@ -20,8 +20,8 @@
     "type": "Album"
   },
   {
-    "key": 2,
-    "artiste": "",
+    "key": 5,
+    "artist": "",
     "description": "AC/DC",
     "title": "T.N.T",
     "descriptionImage": "AC/DC",
@@ -30,8 +30,8 @@
     "type": "Album"
   },
   {
-    "key": 3,
-    "artiste": "",
+    "key": 0,
+    "artist": "",
     "description": "Michael Jackson",
     "title": "Thriller",
     "descriptionImage": "Michael Jackson",
@@ -40,8 +40,8 @@
     "type": "Album"
   },
   {
-    "key": 4,
-    "artiste": "",
+    "key": 1,
+    "artist": "",
     "description": "France",
     "title": "La Marseillaise",
     "descriptionImage": "France - La Marseillaise",
@@ -50,8 +50,8 @@
     "type": "Album"
   },
   {
-    "key": 5,
-    "artiste": "",
+    "key": 2,
+    "artist": "",
     "description": "Jonhy Hallyday",
     "title": "Allumer le feu",
     "descriptionImage": "Jonhy Hallyday",
