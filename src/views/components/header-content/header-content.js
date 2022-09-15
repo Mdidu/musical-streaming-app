@@ -1,8 +1,9 @@
+import { TITLE, TITLES } from "../../../utilities/constantes-ui-text";
 import styles from "./header-content.module.css";
 
 function HeaderContentComponent(props) {
   const { title, type, artist, imagePath, year, songs } = props.data;
-  console.log(props);
+
   return (
     <div className={styles.header_content_header}>
       <div className={styles.header_content_image}>
@@ -17,7 +18,7 @@ function HeaderContentComponent(props) {
           <span className={styles.header_content_artist}>{artist}</span>
           <span> • {year}</span>
           <span>
-            • {songs.length} {songs.length > 1 ? "titres" : "titre"},
+            • {songs.length} {songs.length > 1 ? TITLES : TITLE},
           </span>
           <span> 5 min</span>
         </div>
