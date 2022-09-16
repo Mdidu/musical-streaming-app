@@ -4,6 +4,11 @@ import { useParams } from "react-router-dom";
 import { loadOneAlbum } from "../../../stores/album/album.action";
 import { selectOneAlbum } from "../../../stores/album/album.selector";
 import {
+  loadAlbumIsListen,
+  updateIsListen,
+} from "../../../stores/main-reader/main-reader.action";
+import { selectIsListen } from "../../../stores/main-reader/main-reader.selector";
+import {
   TEST_CARD_PLAYER_PAUSE,
   TEST_SVG_COMPONENT,
 } from "../../../utilities/constantes-testid";
@@ -23,14 +28,27 @@ function AlbumPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const album = useSelector(selectOneAlbum);
+  // const audioRef = useSelector(selectMainReaderRef) ?? null;
+  // const selectedAlbum = useSelector(selectSelectedAlbum);
+  const reduxStateIsListen = useSelector(selectIsListen);
+  let albumAlreadyLoadedInState = false;
 
   useEffect(() => {
     dispatch(loadOneAlbum({ id: id }));
   }, [dispatch, id]);
 
+  useEffect(() => {
+    setIsListen(reduxStateIsListen);
+  }, [reduxStateIsListen]);
+
   const onClickReader = (e) => {
     e.preventDefault();
-    setIsListen(!isListen);
+    if (!albumAlreadyLoadedInState) {
+      albumAlreadyLoadedInState = true;
+      dispatch(loadAlbumIsListen({ id }));
+    }
+
+    dispatch(updateIsListen({ isListen: !isListen }));
   };
 
   const onClickSaveLibrary = () => {

@@ -1,4 +1,13 @@
 import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addMainReaderRef,
+  updateIsListen,
+} from "../../../stores/main-reader/main-reader.action";
+import {
+  selectIsListen,
+  selectSelectedAlbum,
+} from "../../../stores/main-reader/main-reader.selector";
 import {
   TEST_PLAYER_MUTED,
   TEST_PLAYER_NEXT,
@@ -19,7 +28,6 @@ import { SvgPrevious } from "../../icons/Previous";
 import { SvgRandomPlayback } from "../../icons/RandomPlayback";
 import { SvgRepeat } from "../../icons/Repeat";
 import { SvgVolume } from "../../icons/Volume";
-import Mp3 from "./ReadAllOver-NathanMoore.mp3";
 import styles from "./sound-reader.module.css";
 
 export function SoundReaderComponent() {
@@ -31,8 +39,28 @@ export function SoundReaderComponent() {
     currentTime: 0,
     duration: 0,
   });
-
+  const [musicPath, setMusicPath] = useState("");
   const audioRef = useRef();
+  const dispatch = useDispatch();
+  const reduxStateIsListen = useSelector(selectIsListen);
+  const selectedAlbum = useSelector(selectSelectedAlbum);
+
+  useEffect(() => {
+    isListen ? audioRef.current.play() : audioRef.current.pause();
+  }, [isListen]);
+
+  useEffect(() => {
+    setIsListen(reduxStateIsListen);
+  }, [reduxStateIsListen, audioRef]);
+
+  useEffect(() => {
+    const path = selectedAlbum ? selectedAlbum.songs[0].musicPath : "";
+    setMusicPath(path);
+  }, [selectedAlbum]);
+
+  useEffect(() => {
+    dispatch(addMainReaderRef({ audioRef: audioRef }));
+  }, [dispatch]);
 
   useEffect(() => {
     audioRef.current.loop = isLoop;
@@ -53,10 +81,11 @@ export function SoundReaderComponent() {
     // call le store pour exécuter l'action
   };
   const onClickReader = () => {
-    !isListen ? audioRef.current.play() : audioRef.current.pause();
+    isListen ? audioRef.current.play() : audioRef.current.pause();
 
     // call le store pour exécuter l'action
-    setIsListen(!isListen);
+    dispatch(updateIsListen({ isListen: !isListen }));
+
     // audioRef.current.muted()
   };
   const onClickNext = () => {
@@ -81,7 +110,7 @@ export function SoundReaderComponent() {
     });
 
     if (!isLoop && audioRef.current.currentTime === audioRef.current.duration)
-      setIsListen(!isListen);
+      dispatch(updateIsListen({ isListen: !isListen }));
   };
 
   /** FUNCTIONS */
@@ -91,6 +120,7 @@ export function SoundReaderComponent() {
     let seconds = ("0" + Math.floor(time % 60)).slice(-2);
     return minutes + ":" + seconds;
   };
+
   const dragHandler = (e) => {
     audioRef.current.currentTime = e.target.value;
     setSongInfo({
@@ -151,7 +181,9 @@ export function SoundReaderComponent() {
 
       <audio
         controls
-        src={Mp3}
+        src={
+          process.env.PUBLIC_URL + process.env.REACT_APP_PUBLIC_PATH + musicPath
+        }
         ref={audioRef}
         onTimeUpdate={timeUpdateHandler}
         onLoadedMetadata={timeUpdateHandler}
