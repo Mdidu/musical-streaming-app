@@ -1,0 +1,10 @@
+.subscribe_btn {
+  background-color: transparent;
+  padding: 7px 15px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  /* Servira lors de la création du dark theme*/
+  /* color: #fff; */
+}

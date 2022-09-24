@@ -1,4 +1,39 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  font-size: 16px;
+}
+html {
+  background-color: #181818;
+  color: #FFFFFF;
+}
+main {  
+  overflow-x: hidden;
+  height: calc(100vh - 125px);
+}
+footer {
+  padding-top: 10px;
+  width: 100%;
+  bottom: 0;
+}
+a {
+  text-decoration: none;
+  font-size: 20px;
+}
+svg {
+  color: hsla(0,0%,100%,.7);
+}
+#modal {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  bottom: 15%;
+  left: 40%;
+  width: 250px;
+  padding: 10px;
+  height: 20px;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  background: rgb(119, 174, 255);
 }

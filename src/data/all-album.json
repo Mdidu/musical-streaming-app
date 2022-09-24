@@ -1,0 +1,81 @@
+[
+  {
+    "key": 0,
+    "artist": "Michael Jackson",
+    "description": "Michael Jackson",
+    "title": "Thriller",
+    "descriptionImage": "Michael Jackson",
+    "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    "type": "Album",
+    "year": 1982,
+    "songs": [
+      {
+        "id": 0,
+        "title": "Thriller",
+        "musicPath": "/ReadAllOver-NathanMoore.mp3",
+        "featuring": []
+      },
+      {
+        "id": 1,
+        "title": "Billie Jean",
+        "musicPath": "/ReadAllOver-NathanMoore.mp3",
+        "featuring": []
+      }
+    ]
+  },
+  {
+    "key": 1,
+    "artist": "France",
+    "description": "France",
+    "title": "La Marseillaise",
+    "descriptionImage": "France - La Marseillaise",
+    "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    "type": "Album",
+    "year": 2021,
+    "songs": []
+  },
+  {
+    "key": 2,
+    "artist": "Jonhy Hallyday",
+    "description": "Jonhy Hallyday",
+    "title": "Allumer le feu",
+    "descriptionImage": "Jonhy Hallyday",
+    "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    "type": "Album",
+    "year": 2021,
+    "songs": []
+  },
+  {
+    "key": 3,
+    "artist": "Psy",
+    "description": "Psy",
+    "title": "Gangnam Style",
+    "descriptionImage": "Psy",
+    "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    "type": "Album",
+    "year": 2021,
+    "songs": []
+  },
+  {
+    "key": 4,
+    "artist": "Ninho",
+    "description": "Ninho",
+    "title": "Jefe",
+    "descriptionImage": "Ninho",
+    "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    "type": "Album",
+    "year": 2021,
+    "songs": []
+  },
+  {
+    "key": 5,
+    "artist": "AC/DC",
+    "description": "AC/DC",
+    "title": "T.N.T",
+    "descriptionImage": "AC/DC",
+    "imagePath": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    "type": "Album",
+    "year": 2021,
+    "songs": []
+  }
+]

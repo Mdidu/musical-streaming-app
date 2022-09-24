@@ -1,0 +1,4 @@
+/* LOCALES CONSTANTES */
+const BASE_ALBUM_ACTION = "album";
+/* NAME ACTIONS - PUBLIC CONSTANTES */
+export const LOAD_ONE_ALBUM = `${BASE_ALBUM_ACTION}/loadOneAlbum`;

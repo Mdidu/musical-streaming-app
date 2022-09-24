@@ -1,0 +1,25 @@
+.header_content_header {
+  background-color: red;
+  display: flex;
+}
+.header_content_info {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.header_content_image {
+  margin: 24px;
+}
+.header_content_image img {
+  box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+}
+.header_content_info h1 {
+  font-size: 6rem;;
+}
+.header_content_info h2 {
+  text-transform: uppercase;
+}
+.header_content_artist {
+  font-weight: bold;
+}

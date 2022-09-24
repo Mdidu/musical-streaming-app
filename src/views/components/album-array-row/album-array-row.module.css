@@ -1,0 +1,19 @@
+.album_row_content {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-gap: 16px;
+  padding: 16px;
+  grid-template-columns: [index] 16px [first] 4fr [last] minmax(120px,1fr);
+}
+.album_row_content:hover {
+  border-radius: 10px;
+  background-color: #313131 ;
+}
+.album_row_content_title {
+  height: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

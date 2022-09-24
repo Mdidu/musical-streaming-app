@@ -1,0 +1,7 @@
+.recommendation_page h1 {
+  font-size: 24px;
+}
+.recommendation_page div {
+  display: flex;
+  flex-wrap: wrap;
+}
