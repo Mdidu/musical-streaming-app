@@ -8,13 +8,19 @@ import {
   updateIsListen,
 } from "../../../stores/main-reader/main-reader.action";
 import { selectIsListen } from "../../../stores/main-reader/main-reader.selector";
+import { displayModal } from "../../../stores/modal/modal.action";
+import { selectModal } from "../../../stores/modal/modal.selector";
 import {
   TEST_CARD_PLAYER_PAUSE,
   TEST_SVG_COMPONENT,
 } from "../../../utilities/constantes-testid";
-
+import {
+  ADD_TO_LIBRARY,
+  DELETE_TO_LIBRARY,
+} from "../../../utilities/constantes-ui-text";
 import AlbumArrayComponent from "../../components/album-array/album-array";
 import HeaderContentComponent from "../../components/header-content/header-content";
+import Modal from "../../components/modal/modal";
 import { SvgEmptyLike } from "../../icons/EmptyLike";
 import { SvgFullLike } from "../../icons/FullLike";
 import { SvgPause } from "../../icons/Pause";
@@ -25,9 +31,12 @@ import styles from "./album-page.module.css";
 function AlbumPage() {
   const [isListen, setIsListen] = useState(false);
   const [isSaveLibrary, setIsSaveLibrary] = useState(false);
+  const [saveLibraryButtonAlreadyClick, setSaveLibraryButtonAlreadyClick] =
+    useState(false);
   const { id } = useParams();
   const dispatch = useDispatch();
   const album = useSelector(selectOneAlbum);
+  const modal = useSelector(selectModal);
   // const audioRef = useSelector(selectMainReaderRef) ?? null;
   // const selectedAlbum = useSelector(selectSelectedAlbum);
   const reduxStateIsListen = useSelector(selectIsListen);
@@ -36,6 +45,13 @@ function AlbumPage() {
   useEffect(() => {
     dispatch(loadOneAlbum({ id: id }));
   }, [dispatch, id]);
+
+  useEffect(() => {
+    if (saveLibraryButtonAlreadyClick && isSaveLibrary)
+      dispatch(displayModal({ text: ADD_TO_LIBRARY }));
+    else if (saveLibraryButtonAlreadyClick && !isSaveLibrary)
+      dispatch(displayModal({ text: DELETE_TO_LIBRARY }));
+  }, [isSaveLibrary, saveLibraryButtonAlreadyClick, dispatch]);
 
   useEffect(() => {
     setIsListen(reduxStateIsListen);
@@ -52,6 +68,7 @@ function AlbumPage() {
   };
 
   const onClickSaveLibrary = () => {
+    setSaveLibraryButtonAlreadyClick(true);
     setIsSaveLibrary(!isSaveLibrary);
   };
 
@@ -86,6 +103,7 @@ function AlbumPage() {
       </div>
       {/* Array block */}
       {album ? <AlbumArrayComponent songs={album.songs} /> : <></>}
+      {modal.isShowing ? <Modal /> : <></>}
     </div>
   );
 }
