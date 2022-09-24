@@ -5,5 +5,7 @@ export const TITLES = "titres";
 export const TITLE = "titre";
 export const ADD_TO_LIBRARY = "Ajouté dans la bibliothèque";
 export const DELETE_TO_LIBRARY = "Supprimé de la bibliothèque";
+export const ADD_TO_TITLE_LIKED = "Ajouté à Titres likés";
+export const DELETE_TO_TITLE_LIKED = "Supprimé de Titres likés";
 export const ARRAY_HEADER_FIRST_COLUMN = "#";
 export const ARRAY_HEADER_COLUMN_TITLE = "Titre";
