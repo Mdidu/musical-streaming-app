@@ -3,11 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addMainReaderRef,
   updateIsListen,
+  updateSongId,
 } from "../../../stores/main-reader/main-reader.action";
-import {
-  selectIsListen,
-  selectSelectedAlbum,
-} from "../../../stores/main-reader/main-reader.selector";
+import { selectMainReader } from "../../../stores/main-reader/main-reader.selector";
 import {
   TEST_PLAYER_MUTED,
   TEST_PLAYER_NEXT,
@@ -42,8 +40,11 @@ export function SoundReaderComponent() {
   const [musicPath, setMusicPath] = useState("");
   const audioRef = useRef();
   const dispatch = useDispatch();
-  const reduxStateIsListen = useSelector(selectIsListen);
-  const selectedAlbum = useSelector(selectSelectedAlbum);
+  const {
+    isListen: reduxStateIsListen,
+    selectedAlbum,
+    songId,
+  } = useSelector(selectMainReader);
 
   useEffect(() => {
     isListen ? audioRef.current.play() : audioRef.current.pause();
@@ -54,9 +55,17 @@ export function SoundReaderComponent() {
   }, [reduxStateIsListen, audioRef]);
 
   useEffect(() => {
-    const path = selectedAlbum ? selectedAlbum.songs[0].musicPath : "";
+    let id;
+    if (songId) {
+      id = songId;
+    } else {
+      id = 0;
+      dispatch(updateSongId({ songId: id }));
+    }
+
+    const path = selectedAlbum ? selectedAlbum.songs[id].musicPath : "";
     setMusicPath(path);
-  }, [selectedAlbum]);
+  }, [selectedAlbum, songId, dispatch]);
 
   useEffect(() => {
     dispatch(addMainReaderRef({ audioRef: audioRef }));

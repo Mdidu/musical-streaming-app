@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectOneAlbum } from "../../../stores/album/album.selector";
+import {
+  loadAlbumIsListen,
+  updateIsListen,
+  updateSongId,
+} from "../../../stores/main-reader/main-reader.action";
+import { selectMainReader } from "../../../stores/main-reader/main-reader.selector";
 import { displayModal } from "../../../stores/modal/modal.action";
 import { TEST_CARD_PLAYER_PAUSE } from "../../../utilities/constantes-testid";
-import { ADD_TO_TITLE_LIKED, DELETE_TO_TITLE_LIKED } from "../../../utilities/constantes-ui-text";
+import {
+  ADD_TO_TITLE_LIKED,
+  DELETE_TO_TITLE_LIKED,
+} from "../../../utilities/constantes-ui-text";
 import { SvgEmptyLike } from "../../icons/EmptyLike";
 import { SvgFullLike } from "../../icons/FullLike";
 import { SvgPause } from "../../icons/Pause";
@@ -11,11 +21,17 @@ import styles from "./album-array-row.module.css";
 
 function AlbumArrayRowComponent(props) {
   const song = props.song;
+  let albumAlreadyLoadedInState = false;
+
   const [isListen, setIsListen] = useState(false);
   const [isSaveLiked, setIsSaveLiked] = useState(false);
-  const [saveLikedButtonAlreadyClick, setSaveLikedButtonAlreadyClick] = useState(false);
+  const [saveLikedButtonAlreadyClick, setSaveLikedButtonAlreadyClick] =
+    useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const dispatch = useDispatch();
+  const album = useSelector(selectOneAlbum);
+  const { isListen: reduxStateIsListen, songId } =
+    useSelector(selectMainReader);
 
   useEffect(() => {
     if (saveLikedButtonAlreadyClick && isSaveLiked)
@@ -23,6 +39,10 @@ function AlbumArrayRowComponent(props) {
     else if (saveLikedButtonAlreadyClick && !isSaveLiked)
       dispatch(displayModal({ text: DELETE_TO_TITLE_LIKED }));
   }, [isSaveLiked, saveLikedButtonAlreadyClick, dispatch]);
+
+  useEffect(() => {
+    setIsListen(reduxStateIsListen);
+  }, [reduxStateIsListen]);
 
   /** EVENT FUNCTIONS */
   const handleMouseOver = () => {
@@ -35,7 +55,13 @@ function AlbumArrayRowComponent(props) {
 
   const onClickReader = (e) => {
     e.preventDefault();
-    setIsListen(!isListen);
+    if (!albumAlreadyLoadedInState) {
+      albumAlreadyLoadedInState = true;
+      dispatch(updateSongId({ songId: song.id }));
+      dispatch(loadAlbumIsListen({ id: album.key }));
+    }
+
+    dispatch(updateIsListen({ isListen: !isListen }));
   };
 
   const onClickSaveLiked = () => {
@@ -44,11 +70,12 @@ function AlbumArrayRowComponent(props) {
   };
 
   /** CONDITIONNAL COMPONENTS */
-  const listenComponent = isListen ? (
-    <SvgPause data-testid={TEST_CARD_PLAYER_PAUSE} />
-  ) : (
-    <SvgPlay />
-  );
+  const listenComponent =
+    isListen && song.id === songId ? (
+      <SvgPause data-testid={TEST_CARD_PLAYER_PAUSE} />
+    ) : (
+      <SvgPlay />
+    );
   const likeComponent = isSaveLiked ? (
     <SvgFullLike onClick={onClickSaveLiked} width="16" height="16" />
   ) : (

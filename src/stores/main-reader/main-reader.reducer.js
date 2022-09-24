@@ -5,6 +5,7 @@ import {
   loadAlbumIsListen,
   loadMainReaderRef,
   updateIsListen,
+  updateSongId,
 } from "./main-reader.action";
 
 const initialState = {
@@ -22,6 +23,10 @@ export const mainReaderReducer = createReducer(initialState, (builder) => {
     })
     .addCase(updateIsListen, (state, action) => {
       state.isListen = action.payload.isListen;
+      return state;
+    })
+    .addCase(updateSongId, (state, action) => {
+      state.songId = action.payload.songId;
       return state;
     })
     .addCase(loadAlbumIsListen, (state, action) => {

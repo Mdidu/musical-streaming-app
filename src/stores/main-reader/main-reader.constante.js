@@ -5,3 +5,4 @@ export const LOAD_MAIN_READER_REF = `${BASE_MAIN_READER_ACTION}/loadMainReaderRe
 export const LOAD_ALBUM_IS_LISTEN = `${BASE_MAIN_READER_ACTION}/loadAlbumIsListen,`;
 export const ADD_MAIN_READER_REF = `${BASE_MAIN_READER_ACTION}/addMainReaderRef`;
 export const UPDATE_IS_LISTEN = `${BASE_MAIN_READER_ACTION}/updateIsListen`;
+export const UPDATE_SONG_ID = `${BASE_MAIN_READER_ACTION}/updateSongId`;
