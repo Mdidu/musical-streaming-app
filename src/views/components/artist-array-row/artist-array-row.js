@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectOneAlbum } from "../../../stores/album/album.selector";
+import { useParams } from "react-router-dom";
 import {
-  loadAlbumIsListen,
+  loadArtistSongIsListen,
   updateIsListen,
   updateSongId,
 } from "../../../stores/main-reader/main-reader.action";
@@ -18,11 +18,11 @@ import { SvgEmptyLike } from "../../icons/EmptyLike";
 import { SvgFullLike } from "../../icons/FullLike";
 import { SvgPause } from "../../icons/Pause";
 import { SvgPlay } from "../../icons/Play";
-import styles from "./album-array-row.module.css";
+import styles from "./artist-array-rows.module.css";
 
-function AlbumArrayRowComponent(props) {
+function ArtistArrayRowComponent(props) {
   const song = props.song;
-  let albumAlreadyLoadedInState = false;
+  let artistSongAlreadyLoadedInState = false;
 
   const [isListen, setIsListen] = useState(false);
   const [isSaveLiked, setIsSaveLiked] = useState(false);
@@ -30,7 +30,8 @@ function AlbumArrayRowComponent(props) {
     useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const dispatch = useDispatch();
-  const album = useSelector(selectOneAlbum);
+  const { id } = useParams();
+
   const { isListen: reduxStateIsListen, songId } =
     useSelector(selectMainReader);
 
@@ -56,10 +57,10 @@ function AlbumArrayRowComponent(props) {
 
   const onClickReader = (e) => {
     e.preventDefault();
-    if (!albumAlreadyLoadedInState) {
-      albumAlreadyLoadedInState = true;
+    if (!artistSongAlreadyLoadedInState) {
+      artistSongAlreadyLoadedInState = true;
       dispatch(updateSongId({ songId: song.id }));
-      dispatch(loadAlbumIsListen({ id: album.key }));
+      dispatch(loadArtistSongIsListen({ id }));
     }
 
     dispatch(updateIsListen({ isListen: !isListen }));
@@ -90,16 +91,19 @@ function AlbumArrayRowComponent(props) {
   );
 
   const titleColumn = (
-    <div className={styles.album_row_content_title}>
-      {song.title}
-      {isHovering ? <span>{likeComponent}</span> : <></>}
+    <div className={styles.artist_row_content_title}>
+      <div>{song.title}</div>
+      <div>
+        {song.nbViews}
+        {isHovering ? <span>{likeComponent}</span> : <></>}
+      </div>
     </div>
   );
 
   return (
     <div
       key={song.id}
-      className={styles.album_row_content}
+      className={styles.artist_row_content}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
@@ -110,4 +114,4 @@ function AlbumArrayRowComponent(props) {
   );
 }
 
-export default AlbumArrayRowComponent;
+export default ArtistArrayRowComponent;

@@ -1,0 +1,28 @@
+.album_page_buttons {
+  box-sizing: content-box;
+  height: 70px;
+  display: flex;
+  margin: 24px;
+}
+.album_page_button_svg {
+  box-sizing: content-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 0 8px 12px;
+}
+.album_page_button_point_triple {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.card_player {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: rgb(62, 165, 62);
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   border: none;
+ }
