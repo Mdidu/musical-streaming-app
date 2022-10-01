@@ -1,0 +1,4 @@
+/* LOCALES CONSTANTES */
+const BASE_ARTIST_ACTION = "artist";
+/* NAME ACTIONS - PUBLIC CONSTANTES */
+export const LOAD_ONE_ARTIST = `${BASE_ARTIST_ACTION}/loadOneArtist`;

@@ -13,13 +13,17 @@
         "id": 0,
         "title": "Thriller",
         "musicPath": "/ReadAllOver-NathanMoore.mp3",
-        "featuring": []
+        "featuring": [],
+        "duration": 357,
+        "nbViews": 1514382209
       },
       {
         "id": 1,
         "title": "Billie Jean",
         "musicPath": "/ReadAllOver-NathanMoore.mp3",
-        "featuring": []
+        "featuring": [],
+        "duration": 293,
+        "nbViews": 1210382209
       }
     ]
   },

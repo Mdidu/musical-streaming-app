@@ -18,6 +18,7 @@ import {
   TEST_PLAYER_VOLUME,
   TEST_VOLUME,
 } from "../../../utilities/constantes-testid";
+import { getTime } from "../../../utilities/tools";
 import { SvgMuted } from "../../icons/Muted";
 import { SvgNext } from "../../icons/Next";
 import { SvgPause } from "../../icons/Pause";
@@ -123,13 +124,6 @@ export function SoundReaderComponent() {
   };
 
   /** FUNCTIONS */
-  const getTime = (time) => {
-    // Format time from sec to min : sec
-    let minutes = Math.floor(time / 60);
-    let seconds = ("0" + Math.floor(time % 60)).slice(-2);
-    return minutes + ":" + seconds;
-  };
-
   const dragHandler = (e) => {
     audioRef.current.currentTime = e.target.value;
     setSongInfo({

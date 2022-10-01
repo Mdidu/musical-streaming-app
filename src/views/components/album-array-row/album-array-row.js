@@ -13,6 +13,7 @@ import {
   ADD_TO_TITLE_LIKED,
   DELETE_TO_TITLE_LIKED,
 } from "../../../utilities/constantes-ui-text";
+import { getTime } from "../../../utilities/tools";
 import { SvgEmptyLike } from "../../icons/EmptyLike";
 import { SvgFullLike } from "../../icons/FullLike";
 import { SvgPause } from "../../icons/Pause";
@@ -104,7 +105,7 @@ function AlbumArrayRowComponent(props) {
     >
       {numberOrReader}
       {titleColumn}
-      <div>3:01</div>
+      <div>{getTime(song.duration)}</div>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.header_artist {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url(https://i.scdn.co/image/ab67618600001016e6c8c7ccfc06827421a3fb64);
+  background-size: cover;
+  height: 300px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+.header_artist h1 {
+  font-size: 6rem;
+}
+.header_artist_certified_bloc {
+  display: flex;
+  align-items: center;
+}
+
+.header_artist_certified_bloc span {
+  margin-left: 10px;
+}

@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { albumReducer } from "./album/album.reducer";
+import { artistReducer } from "./artist/artist.reducer";
 import { ADD_MAIN_READER_REF } from "./main-reader/main-reader.constante";
 import { mainReaderReducer } from "./main-reader/main-reader.reducer";
 import { modalReducer } from "./modal/modal.reducer";
@@ -24,6 +25,7 @@ export const store = configureStore({
     mainReader: mainReaderReducer,
     recommendation: recommendationReducer,
     album: albumReducer,
+    artist: artistReducer,
     modal: modalReducer,
     playlist: playlistReducer,
   },

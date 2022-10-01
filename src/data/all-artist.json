@@ -1,0 +1,83 @@
+[
+  {
+    "id": 0,
+    "name": "Michael Jackson",
+    "verifiedArtist": true,
+    "popularSong": [
+      {
+        "id": 1,
+        "title": "Billie Jean",
+        "musicPath": "/ReadAllOver-NathanMoore.mp3",
+        "featuring": [],
+        "duration": 293,
+        "nbViews": 1210382209
+      },
+      {
+        "id": 2,
+        "title": "Beat It",
+        "musicPath": "/ReadAllOver-NathanMoore.mp3",
+        "featuring": [],
+        "duration": 258,
+        "nbViews": 760922510
+      },
+      {
+        "id": 3,
+        "title": "Chicago",
+        "musicPath": "/ReadAllOver-NathanMoore.mp3",
+        "featuring": [],
+        "duration": 245,
+        "nbViews": 47817562
+      },
+      {
+        "id": 4,
+        "title": "Smooth Criminal - 2012 Remaster",
+        "musicPath": "/ReadAllOver-NathanMoore.mp3",
+        "featuring": [],
+        "duration": 257,
+        "nbViews": 483529152
+      },
+      {
+        "id": 5,
+        "title": "Don't Stop 'Til You Get Enough",
+        "musicPath": "/ReadAllOver-NathanMoore.mp3",
+        "featuring": [],
+        "duration": 365,
+        "nbViews": 366111145
+      },
+      {
+        "id": 6,
+        "title": "Rock With You - Single Version",
+        "musicPath": "/ReadAllOver-NathanMoore.mp3",
+        "featuring": [],
+        "duration": 220,
+        "nbViews": 317844746
+      },
+      {
+        "id": 7,
+        "title": "The Way You Make Me Feel - 2012 Remaster",
+        "musicPath": "/ReadAllOver-NathanMoore.mp3",
+        "featuring": [],
+        "duration": 298,
+        "nbViews": 235347959
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "AC/DC",
+    "verifiedArtist": true,
+    "popularSong": []
+  },
+  {
+    "id": 2,
+    "name": "Jonhy Hallyday",
+    "verifiedArtist": true,
+    "popularSong": []
+  },
+  {
+    "id": 3,
+    "name": "France",
+    "verifiedArtist": false,
+    "popularSong": []
+  }
+]
