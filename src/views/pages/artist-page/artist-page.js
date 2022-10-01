@@ -4,11 +4,12 @@ import { useParams } from "react-router-dom";
 import { loadOneArtist } from "../../../stores/artist/artist.action";
 import { selectOneArtist } from "../../../stores/artist/artist.selector";
 import {
-  loadAlbumIsListen,
+  loadArtistSongIsListen,
   updateIsListen,
 } from "../../../stores/main-reader/main-reader.action";
 import { selectIsListen } from "../../../stores/main-reader/main-reader.selector";
 import { displayModal } from "../../../stores/modal/modal.action";
+import { selectModal } from "../../../stores/modal/modal.selector";
 import {
   TEST_CARD_PLAYER_PAUSE,
   TEST_SVG_COMPONENT,
@@ -17,7 +18,9 @@ import {
   ADD_TO_LIBRARY,
   DELETE_TO_LIBRARY,
 } from "../../../utilities/constantes-ui-text";
+import ArtistArrayComponent from "../../components/artist-array/artist-array";
 import HeaderArtistComponent from "../../components/header-artist/header-artist";
+import Modal from "../../components/modal/modal";
 import { SvgEmptyLike } from "../../icons/EmptyLike";
 import { SvgFullLike } from "../../icons/FullLike";
 import { SvgPause } from "../../icons/Pause";
@@ -33,11 +36,9 @@ function ArtistPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const artist = useSelector(selectOneArtist);
-  // const modal = useSelector(selectModal);
+  const modal = useSelector(selectModal);
   const reduxStateIsListen = useSelector(selectIsListen);
-  let albumAlreadyLoadedInState = false;
-
-  console.log(artist);
+  let artistSongAlreadyLoadedInState = false;
 
   useEffect(() => {
     dispatch(loadOneArtist({ id: id }));
@@ -56,9 +57,9 @@ function ArtistPage() {
 
   const onClickReader = (e) => {
     e.preventDefault();
-    if (!albumAlreadyLoadedInState) {
-      albumAlreadyLoadedInState = true;
-      dispatch(loadAlbumIsListen({ id }));
+    if (!artistSongAlreadyLoadedInState) {
+      artistSongAlreadyLoadedInState = true;
+      dispatch(loadArtistSongIsListen({ id }));
     }
 
     dispatch(updateIsListen({ isListen: !isListen }));
@@ -84,7 +85,6 @@ function ArtistPage() {
   return (
     <div className={styles.album_page}>
       {artist && <HeaderArtistComponent data={artist} />}
-      {/* Button block */}
       <div className={styles.album_page_buttons}>
         <span
           className={styles.card_player}
@@ -98,9 +98,8 @@ function ArtistPage() {
           <SvgPointTriple />
         </span>
       </div>
-      {/* Array block */}
-      {/* {album ? <AlbumArrayComponent songs={album.songs} /> : <></>}
-      {modal.isShowing ? <Modal /> : <></>} */}
+      {artist ? <ArtistArrayComponent songs={artist.popularSong} /> : <></>}
+      {modal.isShowing ? <Modal /> : <></>}
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.artist_content_spacing {
+  margin: 0 24px 0 24px;
+}
+.artist_array {
+  width: 97%;
+}
+.artist_header {
+  border-bottom: 1px solid hsla(0,0%,100%,.1);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+.artist_row {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-gap: 16px;
+  padding: 16px;
+  grid-template-columns: [index] 16px [first] 4fr [last] minmax(120px,1fr);
+}

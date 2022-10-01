@@ -1,8 +1,10 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { fetchOneAlbum } from "../../service/album/album-service";
+import { fetchOneArtistPopularSong } from "../../service/artist/artist-service";
 import {
   addMainReaderRef,
   loadAlbumIsListen,
+  loadArtistSongIsListen,
   loadMainReaderRef,
   updateIsListen,
   updateSongId,
@@ -31,6 +33,11 @@ export const mainReaderReducer = createReducer(initialState, (builder) => {
     })
     .addCase(loadAlbumIsListen, (state, action) => {
       state.selectedAlbum = fetchOneAlbum(action.payload.id);
+      return state;
+    })
+    .addCase(loadArtistSongIsListen, (state, action) => {
+      const popularSong = fetchOneArtistPopularSong(action.payload.id);
+      state.selectedAlbum = { songs: popularSong };
       return state;
     })
     .addCase(loadMainReaderRef, (state) => {
